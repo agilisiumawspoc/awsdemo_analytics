@@ -36,7 +36,7 @@ function embedDashboard() {
         // replace this dummy url with the one generated via embedding API
         url: "https://us-west-2.quicksight.aws.amazon.com/sn/analyses/4b53e4c0-7235-4b12-8597-5d9ced49dc1d",  
         container: containerDiv,
-        scrolling: "no",https://us-west-2.quicksight.aws.amazon.com/sn/analyses/4b53e4c0-7235-4b12-8597-5d9ced49dc1d
+        scrolling: "no",
         height: "700px",
         width: "1000px",
         footerPaddingEnabled: true
