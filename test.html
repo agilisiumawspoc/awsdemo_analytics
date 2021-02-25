@@ -1,0 +1,51 @@
+    <!DOCTYPE html>
+    <html>
+ 
+    <head>
+        <title>QuickSight Console Embedding</title>
+        <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.12/dist/quicksight-embedding-js-sdk.min.js"></script> 
+        <script type="text/javascript">
+            var session
+ 
+            function onError(payload) {
+                console.log("Do something when the session fails loading");
+            }
+ 
+            function embedSession() {
+                var containerDiv = document.getElementById("embeddingContainer");
+                var options = {
+                    url: "https://us-west-2.quicksight.aws.amazon.com/sn/dashboards/e9c715d3-9cf8-4101-87e9-c5f2bae8b5f3?isauthcode=true&identityprovider=quicksight&code=authcode", // replace this dummy url with the one generated via embedding API
+                    container: containerDiv,
+                    parameters: {
+                        country: "United States"
+                    },
+                    scrolling: "no",
+                    height: "700px",
+                    width: "1000px",
+                    locale: "en-US",
+                    footerPaddingEnabled: true,
+                    defaultEmbeddingVisualType: "TABLE", // this option only applies to QuickSight console embedding and is not used for dashboard embedding
+                };
+                session = QuickSightEmbedding.embedSession(options);
+                session.on("error", onError);
+            }
+ 
+            function onCountryChange(obj) {
+                session.setParameters({country: obj.value});
+            }
+        </script> 
+    </head>
+ 
+    <body onload="embedSession()">
+        <span>
+            <label for="country">Country</label>
+            <select id="country" name="country" onchange="onCountryChange(this)">
+                <option value="United States">United States</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </span>
+        <div id="embeddingContainer"></div>
+    </body>
+ 
+    </html>
