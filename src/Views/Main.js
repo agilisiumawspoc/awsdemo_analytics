@@ -103,7 +103,6 @@ const Main = () => {
                     <div className="col-sm-6" id="embeddingContainer">
                         <img src={sample6} alt="sample"/>
                     </div>
-                    <iframe src="http://www.google.com" width="100%" height="4000" frameborder="0" scrolling="yes"></iframe>
                     <div className="col-sm-2">
                         <div className="sample-para">Real Time Price. Currency in USD</div>
                         <div className="price">30,211.91</div>
