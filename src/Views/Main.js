@@ -34,7 +34,7 @@ function embedDashboard() {
     var containerDiv = document.getElementById("embeddingContainer");
     var options = {
         // replace this dummy url with the one generated via embedding API
-        url: "https://us-west-2.quicksight.aws.amazon.com/sn/analyses/4b53e4c0-7235-4b12-8597-5d9ced49dc1d",  
+        url: "https://us-west-2.quicksight.aws.amazon.com/sn/dashboards/e9c715d3-9cf8-4101-87e9-c5f2bae8b5f3",  
         container: containerDiv,
         scrolling: "no",
         height: "700px",
