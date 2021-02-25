@@ -34,12 +34,14 @@ function embedDashboard() {
     var containerDiv = document.getElementById("embeddingContainer");
     var options = {
         // replace this dummy url with the one generated via embedding API
-        url: "https://us-west-2.quicksight.aws.amazon.com/sn/dashboards/e9c715d3-9cf8-4101-87e9-c5f2bae8b5f3",  
+        url: "https://us-west-2.quicksight.aws.amazon.com/sn/dashboards/e9c715d3-9cf8-4101-87e9-c5f2bae8b5f3?isauthcode=true&identityprovider=quicksight&code=authcode",  
         container: containerDiv,
         scrolling: "no",
         height: "700px",
         width: "1000px",
-        footerPaddingEnabled: true
+        footerPaddingEnabled: true,
+        defaultEmbeddingVisualType: "TABLE", // this option only applies to QuickSight console embedding and is not used for dashboard embedding
+
     };
     dashboard = QuickSightEmbedding.embedDashboard(options);
 }
